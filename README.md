@@ -47,25 +47,15 @@ The whole stack, owned.</p>
 ## How it gets built
 
 <table align="center"><tr>
-<td valign="middle" align="center" width="300">
-<pre>
-           H
-          / \
-         /   \
-        /     \
-       A ─────G
-</pre>
+<td valign="middle" align="center" width="340">
+<img src="hag-loop.svg" alt="HAG Loop diagram" width="320">
 </td>
-<td valign="middle">
-<sub>
-
-**H** &mdash; asks, doesn&rsquo;t stop at the first plausible answer.<br>
-**A** &mdash; pattern-completes, surfaces adjacencies.<br>
-**G** &mdash; append-only memory; rollback when a branch is wrong.
-
-<em>The matrix below isn&rsquo;t a persona. It&rsquo;s what this loop outputs when it runs continuously.</em>
-
-</sub>
+<td valign="middle" width="500">
+<sub><b>H</b> &mdash; asks, doesn&rsquo;t stop at the first plausible answer.</sub><br>
+<sub><b>A</b> &mdash; pattern-completes, surfaces adjacencies.</sub><br>
+<sub><b>G</b> &mdash; append-only memory; rollback when a branch is wrong.</sub>
+<br><br>
+<sub><em>The matrix below isn&rsquo;t a persona. It&rsquo;s what this loop outputs when it runs continuously.</em></sub>
 </td>
 </tr></table>
 
@@ -90,137 +80,136 @@ The whole stack, owned.</p>
 
 <!-- Row 1 : LLM / Text -->
 <tr>
-<td valign="top"><sub><strong>LLM&nbsp;/&nbsp;Text</strong></sub></td>
+<td valign="top"><sub><b>LLM/Text</b></sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://doi.org/10.5281/zenodo.19626829"><strong>TRB</strong></a> Paper 1 &mdash; <em>Representation Bandwidth</em><br>
-&bull; <a href="https://doi.org/10.5281/zenodo.19587024"><strong>SFP v2</strong></a> Paper 2 &mdash; phased-array probe<br>
-&bull; <a href="https://github.com/HenryZ838978/rl-drift">rl-drift</a> &mdash; RLHF manifold compression
+&bull; <a href="https://doi.org/10.5281/zenodo.19626829"><b>TRB</b></a> P1 &middot; Rep.Bandwidth<br>
+&bull; <a href="https://doi.org/10.5281/zenodo.19587024"><b>SFP&nbsp;v2</b></a> P2 &middot; probe kit<br>
+&bull; <a href="https://github.com/HenryZ838978/rl-drift">rl-drift</a>
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/spectral-flow-probe"><strong>spectral-flow-probe</strong></a> &mdash; 20-min scan, where your RL went too far<br>
-&bull; <a href="https://github.com/HenryZ838978/turboquant-pytorch">turboquant-pytorch</a> &mdash; Google ICLR&rsquo;26 reimpl.<br>
-&bull; <a href="https://github.com/HenryZ838978/RepEngvLLM">RepEngvLLM</a> &mdash; RepEng&times;vLLM, MiniCPM4.1
+&bull; <a href="https://github.com/HenryZ838978/spectral-flow-probe"><b>spectral-flow-probe</b></a> &middot; 20-min RL scan<br>
+&bull; <a href="https://github.com/HenryZ838978/turboquant-pytorch">turboquant-pytorch</a> &middot; ICLR'26<br>
+&bull; <a href="https://github.com/HenryZ838978/RepEngvLLM">RepEngvLLM</a>
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/nano-vllm-with-TurboQuant">nano-vllm + TurboQuant</a> &mdash; 5&times; KV compression<br>
-&bull; <a href="https://github.com/HenryZ838978/flash-attn-blackwell">flash-attn-blackwell</a> &mdash; FA wheels, sm_120
+&bull; <a href="https://github.com/HenryZ838978/nano-vllm-with-TurboQuant">nano-vllm+TQ</a> &middot; 5&times;&nbsp;KV<br>
+&bull; <a href="https://github.com/HenryZ838978/flash-attn-blackwell">flash-attn-blackwell</a> &middot; sm_120
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/claude-code">claude-code</a> (fork)<br>
-&bull; open-code-agent &mdash; AI coding runtime
+&bull; <a href="https://github.com/HenryZ838978/claude-code">claude-code</a> fork<br>
+&bull; open-code-agent
 </sub></td>
 <td valign="top"><sub>
 &bull; <a href="https://github.com/HenryZ838978/superpowers-cn">superpowers-cn</a><br>
-&nbsp;&nbsp;10&#8239;k&#x2B50; skills framework &middot; CN
+&nbsp;&nbsp;10&#8239;k&#x2B50; &middot; CN
 </sub></td>
 </tr>
 
 <!-- Row 2 : Vision / VLA -->
 <tr>
-<td valign="top"><sub><strong>Vision&nbsp;/&nbsp;VLA</strong></sub></td>
+<td valign="top"><sub><b>Vision/VLA</b></sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/RepSNI">RepSNI report</a> &mdash; 14 models, 6&#8239;k gens, SNI<br>
-&bull; TRB &sect;VLA &mdash; why VLA fails, from geometry
+&bull; <a href="https://github.com/HenryZ838978/RepSNI">RepSNI</a> &middot; 14&#8239;mdls, SNI<br>
+&bull; TRB &sect;VLA &middot; geometry
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/SDE">SDE</a> &mdash; Semantic DarkSpace Expression<br>
-&bull; <a href="https://github.com/HenryZ838978/Joi">Joi</a> &mdash; personality drift engine
+&bull; <a href="https://github.com/HenryZ838978/SDE">SDE</a> &middot; DarkSpace<br>
+&bull; <a href="https://github.com/HenryZ838978/Joi">Joi</a> &middot; drift engine
 </sub></td>
 <td valign="top"><sub>
-&bull; minicpmv_onnx &mdash; MiniCPM-V ONNX toolchain<br>
-&bull; multi-image async VLM on QNN
+&bull; minicpmv_onnx<br>
+&bull; multi-image async VLM (QNN)
 </sub></td>
 <td valign="top"><sub>
-&bull; <strong>AVIA &mdash; Satellite VLM</strong><br>
-&nbsp;&nbsp;libtorch C++, MiniCPM-4V, on-board payload
+&bull; <b>AVIA &mdash; Satellite VLM</b><br>
+&nbsp;&nbsp;libtorch C++ &middot; on-board
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/Seedance2.0-Storyboard-Planner"><strong>Seedance&nbsp;2.0 Planner</strong></a><br>
-&nbsp;&nbsp;44&#x2B50; &middot; storyboard for ByteDance video gen
+&bull; <a href="https://github.com/HenryZ838978/Seedance2.0-Storyboard-Planner"><b>Seedance 2.0 Planner</b></a><br>
+&nbsp;&nbsp;44&#x2B50; &middot; ByteDance video
 </sub></td>
 </tr>
 
 <!-- Row 3 : Speech / Audio -->
 <tr>
-<td valign="top"><sub><strong>Speech&nbsp;/&nbsp;Audio</strong></sub></td>
+<td valign="top"><sub><b>Speech/Audio</b></sub></td>
 <td valign="top"><sub>&mdash;</sub></td>
 <td valign="top"><sub>
-&bull; dereverb_audio &mdash; internal DSP toolchain
+&bull; dereverb_audio &middot; DSP
 </sub></td>
 <td valign="top"><sub>
-&bull; VoxCPM &mdash; voice-clone runtime<br>
-&bull; Omni &mdash; MiniCPM-o 4.5 gguf / llama.cpp-omni port
+&bull; VoxCPM &middot; voice-clone<br>
+&bull; Omni &middot; MiniCPM-o 4.5 gguf
 </sub></td>
 <td valign="top"><sub>
-&bull; <strong>AVIA &mdash; ATC ASR</strong> &middot; Apple Silicon<br>
-&nbsp;&nbsp;<strong>RTF&nbsp;&gt;&nbsp;3</strong> &middot; <strong>mem&nbsp;&lt;&nbsp;2&#8239;GB</strong><br>
-&bull; <a href="https://github.com/HenryZ838978/CallCenter-VoiceAgent">CallCenter-VA</a><br>
-&bull; <a href="https://github.com/HenryZ838978/Hybrid-VoiceAgent">Hybrid-VA</a> (full-duplex)<br>
+&bull; <b>AVIA &mdash; ATC ASR</b> &middot; Apple Silicon<br>
+&nbsp;&nbsp;<b>RTF&nbsp;&gt;&nbsp;3</b> &middot; <b>mem&nbsp;&lt;&nbsp;2&#8239;GB</b><br>
+&bull; <a href="https://github.com/HenryZ838978/CallCenter-VoiceAgent">CallCenter-VA</a> &middot; <a href="https://github.com/HenryZ838978/Hybrid-VoiceAgent">Hybrid-VA</a><br>
 &bull; <a href="https://github.com/HenryZ838978/Voiceagent-MacApp">Voiceagent-Mac</a>
 </sub></td>
 <td valign="top"><sub>
-&bull; <strong>PixelSynesthesia</strong> &mdash; music &rarr; pixel<br>
-&bull; <a href="https://www.bilibili.com/video/BV1U42wBvEFz"><strong>&laquo;&#26538;&#20853;&#39042;&raquo; AI MV</strong></a> &middot; 100&#8239;k views &middot; 7.1&#8239;k likes
+&bull; <b>PixelSynesthesia</b> &middot; music&rarr;pixel<br>
+&bull; <a href="https://www.bilibili.com/video/BV1U42wBvEFz"><b>&laquo;&#26538;&#20853;&#39042;&raquo; AI MV</b></a> &middot; 100&#8239;k &middot; 7.1&#8239;k
 </sub></td>
 </tr>
 
 <!-- Row 4 : Edge / Hardware -->
 <tr>
-<td valign="top"><sub><strong>Edge&nbsp;/&nbsp;Hardware</strong></sub></td>
+<td valign="top"><sub><b>Edge/Hardware</b></sub></td>
 <td valign="top"><sub>
-&bull; MiniCPM cross-platform &mdash; benchmark suite
+&bull; MiniCPM cross-platform bench
 </sub></td>
 <td valign="top"><sub>&mdash;</sub></td>
 <td valign="top"><sub>
-&bull; Qualcomm QNN &middot; MediaTek MTK &middot; Rockchip RKNN<br>
+&bull; QNN &middot; MTK &middot; RKNN<br>
 &bull; Intel NPU &middot; Apple Silicon
 </sub></td>
 <td valign="top"><sub>
 &bull; <a href="https://github.com/HenryZ838978/ScalEdgeClaw">EdgeClaw-audit</a><br>
-&nbsp;&nbsp;on-device multi-tenant isolation review
+&nbsp;&nbsp;multi-tenant isolation
 </sub></td>
 <td valign="top"><sub>&mdash;</sub></td>
 </tr>
 
 <!-- Row 5 : Agent / Workflow -->
 <tr>
-<td valign="top"><sub><strong>Agent&nbsp;/&nbsp;Workflow</strong></sub></td>
+<td valign="top"><sub><b>Agent/Workflow</b></sub></td>
 <td valign="top"><sub>
-&bull; <strong>HAG Loop</strong> &mdash; Human-AI-Git framework
+&bull; <b>HAG Loop</b> &middot; H&ndash;AI&ndash;Git
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/ScalEdgeClaw">ScalEdgeClaw</a> &mdash; multi-tenant EdgeClaw
+&bull; <a href="https://github.com/HenryZ838978/ScalEdgeClaw">ScalEdgeClaw</a>
 </sub></td>
 <td valign="top"><sub>
-&bull; cursor-rts-audio &mdash; realtime audio for Cursor
+&bull; cursor-rts-audio
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/pocketclaw"><strong>PocketClaw</strong> (APK)</a><br>
-&nbsp;&nbsp;20&#x2B50; &middot; 19.4&#8239;k LoC Kotlin &middot; no server<br>
-&bull; OmniAgent &mdash; Swift macOS / iOS / visionOS
+&bull; <a href="https://github.com/HenryZ838978/pocketclaw"><b>PocketClaw</b></a> APK<br>
+&nbsp;&nbsp;20&#x2B50; &middot; 19.4&#8239;k Kotlin &middot; no server<br>
+&bull; OmniAgent &middot; Swift
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/OpenMAIC-VoiceSupport"><strong>OpenMAIC</strong></a><br>
-&nbsp;&nbsp;THU multi-agent classroom &middot; voice-support
+&bull; <a href="https://github.com/HenryZ838978/OpenMAIC-VoiceSupport"><b>OpenMAIC</b></a><br>
+&nbsp;&nbsp;THU MAIC &middot; voice
 </sub></td>
 </tr>
 
 <!-- Row 6 : Meta / Tooling -->
 <tr>
-<td valign="top"><sub><strong>Meta&nbsp;/&nbsp;Tooling</strong></sub></td>
+<td valign="top"><sub><b>Meta/Tooling</b></sub></td>
 <td valign="top"><sub>&mdash;</sub></td>
 <td valign="top"><sub>
-&bull; <strong><a href="https://www.npmjs.com/package/pgattn">pgattn</a></strong> &mdash; <strong>the LM&rsquo;s native PDF-git</strong><br>
-&nbsp;&nbsp;<em>&ldquo;vLLM pages KV for GPUs; pgattn pages attention for humans.&rdquo;</em>
+&bull; <b><a href="https://www.npmjs.com/package/pgattn">pgattn</a></b> &middot; LM's native PDF-git<br>
+&nbsp;&nbsp;<em>"vLLM pages KV; pgattn pages attention."</em>
 </sub></td>
 <td valign="top"><sub>
-&bull; wechat-extract &mdash; WeChat chat-log ETL
+&bull; wechat-extract &middot; chat ETL
 </sub></td>
 <td valign="top"><sub>
-&bull; html-inbox &mdash; slide / doc staging
+&bull; html-inbox &middot; doc staging
 </sub></td>
 <td valign="top"><sub>
-&bull; <a href="https://github.com/HenryZ838978/wudai-fengyun">&#20116;&#20195;&#39118;&#20113;</a> &mdash; Five Dynasties interactive
+&bull; <a href="https://github.com/HenryZ838978/wudai-fengyun">&#20116;&#20195;&#39118;&#20113;</a> &middot; Five Dynasties
 </sub></td>
 </tr>
 

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="320" height="213" role="img" aria-label="HAG Loop: Human, AI, Git">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <style>
+      .node-label { font-family: -apple-system, system-ui, "Segoe UI", sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; }
+      .caption    { font-family: -apple-system, system-ui, "Segoe UI", sans-serif; font-size: 11px; fill: #64748b; letter-spacing: 0.3px; }
+    </style>
+  </defs>
+
+  <!-- edges (bidirectional implied by double arrows) -->
+  <line x1="180" y1="55"  x2="80"  y2="178" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="80"  y1="178" x2="180" y2="55"  stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <line x1="180" y1="55"  x2="280" y2="178" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="280" y1="178" x2="180" y2="55"  stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <line x1="80"  y1="178" x2="280" y2="178" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="280" y1="178" x2="80"  y2="178" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- H node -->
+  <circle cx="180" cy="55" r="26" fill="#3b82f6"/>
+  <text x="180" y="62" text-anchor="middle" class="node-label">H</text>
+  <text x="180" y="22" text-anchor="middle" class="caption">Human</text>
+
+  <!-- A node -->
+  <circle cx="80" cy="178" r="26" fill="#ef4444"/>
+  <text x="80" y="185" text-anchor="middle" class="node-label">A</text>
+  <text x="80" y="225" text-anchor="middle" class="caption">AI</text>
+
+  <!-- G node -->
+  <circle cx="280" cy="178" r="26" fill="#22c55e"/>
+  <text x="280" y="185" text-anchor="middle" class="node-label">G</text>
+  <text x="280" y="225" text-anchor="middle" class="caption">Git</text>
+</svg>
