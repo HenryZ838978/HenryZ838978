@@ -9,7 +9,7 @@ Independent researcher &nbsp;·&nbsp; Hangzhou &nbsp;·&nbsp; currently at <a hr
 <h3>One person. Six modalities. Five layers.</h3>
 
 <p><em>Theory &rarr; Tools &rarr; Runtime &rarr; Product &rarr; Culture.</em><br>
-The whole stack, owned.</p>
+Full-Stack, All Runnable.</p>
 
 <!-- identity badges -->
 <p>
@@ -234,7 +234,7 @@ The whole stack, owned.</p>
 </td>
 <td valign="top" width="50%">
 <h3>Paper&nbsp;2 &middot; <em>Spectral Flow Probe v2 (SFP)</em></h3>
-<p><sub>A measurement toolkit for Transformer representation bandwidth.</sub></p>
+<p><sub>A measurement toolkit for Transformer representation bandwidth.</sub><br>&nbsp;</p>
 <p>Five components: <strong>SpectralProbe</strong> (deterministic 7-band bandwidth), <strong>RotationAnalyzer</strong> (weight-space SVD &amp; principal angles), <strong>BandwidthDiagnostic</strong> (pre-training data-mix audit), <strong>SpectralCallback</strong> (training-time monitor), and <strong>spectral_pr_loss</strong> (differentiable per-band regularizer).</p>
 <p>Every measurement runs on a single consumer GPU. Reproducible to 10<sup>&minus;10</sup> across hardware.</p>
 <p><sub><code>20 GPU-min / 7&nbsp;B pair</code> &middot; <code>MIT</code></sub></p>
