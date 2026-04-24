@@ -19,6 +19,7 @@ The whole stack, owned.</p>
 <a href="https://www.npmjs.com/package/pgattn"><img alt="npm" src="https://img.shields.io/badge/npm-pgattn-cb3837?style=flat-square"></a>
 <a href="https://github.com/HenryZ838978/pocketclaw/releases/latest"><img alt="APK released" src="https://img.shields.io/badge/PocketClaw-APK%20v0.4.1-6366f1?style=flat-square"></a>
 <a href="https://space.bilibili.com/188066555"><img alt="Bilibili" src="https://img.shields.io/badge/bilibili-100k%20view-ec407a?style=flat-square"></a>
+<a href="report/henry-cv.pdf"><img alt="CV" src="https://img.shields.io/badge/CV-pgattn--rendered-64748b?style=flat-square"></a>
 </p>
 
 <!-- domains covered -->
@@ -200,7 +201,8 @@ The whole stack, owned.</p>
 <td valign="top"><sub><sub>&mdash;</sub></sub></td>
 <td valign="top"><sub><sub>
 &bull; <b><a href="https://www.npmjs.com/package/pgattn">pgattn</a></b> &middot; LM's native PDF-git<br>
-&nbsp;&nbsp;<em>"vLLM pages KV; pgattn pages attention."</em>
+&nbsp;&nbsp;<em>"vLLM pages KV; pgattn pages attention."</em><br>
+&nbsp;&nbsp;&rarr; <a href="report/henry-cv.pdf">this repo's CV</a> is a pgattn output.
 </sub></sub></td>
 <td valign="top"><sub><sub>
 &bull; wechat-extract &middot; chat ETL
@@ -275,6 +277,8 @@ The whole stack, owned.</p>
 ## About this page
 
 <p>If a one-person full-stack AI lab sounds implausible &mdash; and you suspect most of it is filler &mdash; the fastest way to find out is to open the repos above. Each cell links to real code, a real DOI, or a real shipped binary.</p>
+
+<p><sub><em>This page eats its own dog food. The README itself is a HAG&nbsp;Loop artifact (Agent/Workflow row). The accompanying <a href="report/henry-cv.pdf">CV</a> is a pgattn artifact (Meta/Tooling row). Everything lives in Git. Nothing on this page cites a tool it doesn&rsquo;t also use on itself.</em></sub></p>
 
 <p>If any of it overlaps with what you&rsquo;re building, happy to chat anytime: <a href="mailto:HenryZ838978@aliyun.com">HenryZ838978@aliyun.com</a>.</p>
 
