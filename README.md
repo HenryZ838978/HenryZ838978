@@ -123,10 +123,9 @@
 Independent researcher &nbsp;·&nbsp; Hangzhou &nbsp;·&nbsp; currently at <a href="https://modelbest.cn">ModelBest / MiniCPM</a>
 </p>
 
-<h3>One person. Six modalities. Five layers.</h3>
 
 <p><em>Theory &rarr; Tools &rarr; Runtime &rarr; Product &rarr; Culture.</em><br>
-Full-Stack, All Runnable.</p>
+All Runnable.</p>
 
 <!-- identity badges -->
 <p>
