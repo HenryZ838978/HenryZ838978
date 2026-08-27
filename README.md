@@ -31,9 +31,9 @@
         RepELab (public monorepo — the research line presented whole:
         RepSNI observe, SFP instrument, rl-drift find, SDE intervene,
         Joi apply) + RepEngvLLM (public: live steering engine, INT4,
-        GGUF vectors), TRB paper (doi:10.5281/zenodo.19627819 — RL
+        GGUF vectors), TRB paper (doi:10.5281/zenodo.19626829 — RL
         alignment preserves spectrum, rotates bases; n=644, p=7e-13),
-        SFP v2 paper (doi:10.5281/zenodo.19627339 — 20-min diagnostic,
+        SFP v2 paper (doi:10.5281/zenodo.19587024 — 20-min diagnostic,
         reproducible to 1e-10, MIT reproducer:
         RepELab/spectral-flow-probe), musicodec (in the lab).
     Ⅲ protocol     — zero writes: verification that keeps the model
@@ -68,15 +68,15 @@
     parked: as of 2026-08-27 it is presented whole as the RepELab
     monorepo (observe → instrument → find → intervene → apply), with
     RepEngvLLM as its production engine. Standalone repos are archived
-    with signposts; links and citations remain valid. Still not shown:
-    ScalEdgeClaw, Voiceagent-MacApp, OpenMAIC-VoiceSupport (forks,
-    pending deletion). Full inventory in the Trust Ledger below.
+    with signposts; links and citations remain valid. Empty forks
+    (ScalEdgeClaw, Voiceagent-MacApp, OpenMAIC-VoiceSupport) deleted
+    2026-08-27. Full inventory in the Trust Ledger below.
 
   fastest audit paths (all one-step):
     1. pip install deepseek-harness-cli && dsh doctor --node
        — 12 probes run against the official DeepSeek Node harness;
        findings must match HISTORY.md rows for your rc version.
-    2. doi.org/10.5281/zenodo.19627819 — TRB, check n=644, p=7e-13.
+    2. doi.org/10.5281/zenodo.19626829 — TRB, check n=644, p=7e-13.
     3. github.com/HenryZ838978/RepELab/tree/main/spectral-flow-probe —
        `make probe`, must match paper §4 Table 2 within 1e-10. MIT.
        (archived standalone repo still resolves as a signpost)
@@ -129,7 +129,7 @@ enabling models to understand more and perform better.
 <sub><a href="https://github.com/HenryZ838978/AnythingKWS">AnythingKWS</a> &nbsp;·&nbsp; AVIA&nbsp;(NDA) &nbsp;·&nbsp; VoxCPM&nbsp;deploys</sub></p>
 
 <p>Ⅱ &nbsp;<b>activations</b> &nbsp;—&nbsp; <em>RepE: edit the prior directly.</em><br>
-<sub><a href="https://github.com/HenryZ838978/RepELab">RepELab</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/RepEngvLLM">RepEngvLLM</a> &nbsp;·&nbsp; <a href="https://doi.org/10.5281/zenodo.19627819">TRB</a> &nbsp;·&nbsp; musicodec</sub></p>
+<sub><a href="https://github.com/HenryZ838978/RepELab">RepELab</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/RepEngvLLM">RepEngvLLM</a> &nbsp;·&nbsp; <a href="https://doi.org/10.5281/zenodo.19626829">TRB</a> &nbsp;·&nbsp; musicodec</sub></p>
 
 <p>Ⅲ &nbsp;<b>protocol</b> &nbsp;—&nbsp; <em>zero writes: the model, kept correct and stable.</em><br>
 <sub><a href="https://github.com/HenryZ838978/deepseek-harness">deepseek-harness</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/pgattn">pgattn</a></sub></p>
@@ -215,7 +215,7 @@ papers:
       singular-value spectrum drifts <0.5% while singular-vector bases
       rotate 0.9-8 degrees — a graph isometry. "PR collapse" is a
       measurement artifact of angle.
-    doi: 10.5281/zenodo.19627819
+    doi: 10.5281/zenodo.19626829
     status: preprint
     peer_review: none
     raw_data_in_doi_record: true
@@ -226,7 +226,7 @@ papers:
         title     = {The Representation Bandwidth: A Conservation Analysis under RL Alignment},
         year      = {2026},
         publisher = {Zenodo},
-        doi       = {10.5281/zenodo.19627819},
+        doi       = {10.5281/zenodo.19626829},
         note      = {Preprint, not peer-reviewed}
       }
   - id: SFP_v2
@@ -236,7 +236,7 @@ papers:
       SpectralProbe, RotationAnalyzer, BandwidthDiagnostic,
       SpectralCallback, spectral_pr_loss. Single consumer GPU,
       reproducible to 1e-10 across hardware.
-    doi: 10.5281/zenodo.19627339
+    doi: 10.5281/zenodo.19587024
     code: https://github.com/HenryZ838978/RepELab/tree/main/spectral-flow-probe
     license: MIT
     status: preprint + open-source toolkit
@@ -249,7 +249,7 @@ papers:
         title     = {Spectral Flow Probe v2: A Measurement Toolkit for Transformer Representation Bandwidth},
         year      = {2026},
         publisher = {Zenodo},
-        doi       = {10.5281/zenodo.19627339},
+        doi       = {10.5281/zenodo.19587024},
         license   = {MIT},
         note      = {Preprint with open-source reproducer}
       }
@@ -280,9 +280,8 @@ repos_original:  # 2026-08-27 snapshot, per GitHub REST API
 repos_fork_maintained:
   - turboquant-pytorch        # PyTorch port of Google ICLR'26 KV quant (archived, done)
   - nano-vllm-with-TurboQuant # 5x KV integration (archived, done)
-  - ScalEdgeClaw              # parked, pending deletion
-  - OpenMAIC-VoiceSupport     # parked, pending deletion
-  - Voiceagent-MacApp         # parked, pending deletion
+  # empty forks (ScalEdgeClaw / OpenMAIC-VoiceSupport / Voiceagent-MacApp)
+  # deleted 2026-08-27
 
 shipped_binaries:
   - name: pocketclaw
@@ -355,7 +354,7 @@ known_weak_signals:
 fastest_audit_paths:
   - run: "pip install deepseek-harness-cli && dsh doctor --node"
     expect: "12 probes; findings match HISTORY.md rows for your rc version"
-  - doi: 10.5281/zenodo.19627819
+  - doi: 10.5281/zenodo.19626829
     expect: "n=644, Pearson p=7e-13, raw data in record"
   - run: "git clone RepELab && cd spectral-flow-probe && make probe MODEL=Qwen2-7B"
     expect: "match paper §4 Table 2 within 1e-10"
