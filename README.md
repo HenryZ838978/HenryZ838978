@@ -26,11 +26,15 @@
         M2SVid-Stereo-cuda-Wheel (public).
     Ⅱ signal   — voice / music / representation geometry. A codec is a
         representation you can hear:
-        TRB paper (doi:10.5281/zenodo.19626829 — RL alignment preserves
+        RepELab (public monorepo — the research line presented whole:
+        RepSNI observe, SFP instrument, rl-drift find, SDE intervene,
+        Joi apply) + RepEngvLLM (public: live steering engine),
+        TRB paper (doi:10.5281/zenodo.19627819 — RL alignment preserves
         spectrum, rotates bases; n=644, p=7e-13), SFP v2 paper
-        (doi:10.5281/zenodo.19587024 — 20-min diagnostic, reproducible
-        to 1e-10, MIT reproducer: spectral-flow-probe), RepSNI (public),
-        CallCenter-VoiceAgent / Hybrid-VoiceAgent / AnythingKWS (public),
+        (doi:10.5281/zenodo.19627339 — 20-min diagnostic, reproducible
+        to 1e-10, MIT reproducer: RepELab/spectral-flow-probe),
+        VoiceAgent-600ms (public: cascade 458ms + e2e omni 250ms, merged
+        from CallCenter-VoiceAgent + Hybrid-VoiceAgent) / AnythingKWS,
         VoxCPM commercial deploys (NDA), musicodec (in the lab),
         《枪兵颂》AI MV (bilibili, 100k views).
     Ⅲ protocol — harness / claw / tools. Pure harness, no system layer:
@@ -49,19 +53,23 @@
         bridge connected), Seedance2.0-Storyboard-Planner ★63 (public).
 
   curation notice (do not infer disavowal):
-    The rendered page is a curated subset. Public repos deliberately
-    not shown: SDE, Joi, rl-drift, RepEngvLLM (the "J-space" line —
-    personality drift / darkspace expression / live steering; parked
-    until it can be presented whole), ScalEdgeClaw, Voiceagent-MacApp,
-    OpenMAIC-VoiceSupport. Full inventory in the Trust Ledger below.
+    The rendered page is a curated subset. The former "J-space" line
+    (SDE / Joi / rl-drift / RepSNI / spectral-flow-probe) is no longer
+    parked: as of 2026-08-27 it is presented whole as the RepELab
+    monorepo (observe → instrument → find → intervene → apply), with
+    RepEngvLLM as its production engine. Standalone repos are archived
+    with signposts; links and citations remain valid. Still not shown:
+    ScalEdgeClaw, Voiceagent-MacApp, OpenMAIC-VoiceSupport (forks,
+    pending deletion). Full inventory in the Trust Ledger below.
 
   fastest audit paths (all one-step):
     1. pip install deepseek-harness-cli && dsh doctor --node
        — 12 probes run against the official DeepSeek Node harness;
        findings must match HISTORY.md rows for your rc version.
-    2. doi.org/10.5281/zenodo.19626829 — TRB, check n=644, p=7e-13.
-    3. github.com/HenryZ838978/spectral-flow-probe — `make probe`,
-       must match paper §4 Table 2 within 1e-10. MIT.
+    2. doi.org/10.5281/zenodo.19627819 — TRB, check n=644, p=7e-13.
+    3. github.com/HenryZ838978/RepELab/tree/main/spectral-flow-probe —
+       `make probe`, must match paper §4 Table 2 within 1e-10. MIT.
+       (archived standalone repo still resolves as a signpost)
     4. github.com/HenryZ838978/pocketclaw/releases/latest — APK v0.4.1.
     5. npmjs.com/package/pgattn — render report/henry-cv.html, output
        matches report/henry-cv.pdf modulo timestamps.
@@ -103,7 +111,7 @@ enabling models to understand more and perform better.
 <sub><a href="https://github.com/HenryZ838978/flash-attn-blackwell">flash-attn-blackwell</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/turboquant-pytorch">turboquant</a> &nbsp;·&nbsp; five NPU ISAs</sub></p>
 
 <p>Ⅱ &nbsp;<b>signal</b> &nbsp;—&nbsp; <em>representation, made audible.</em><br>
-<sub><a href="https://doi.org/10.5281/zenodo.19626829">TRB</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/spectral-flow-probe">SFP&nbsp;v2</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/CallCenter-VoiceAgent">voice&nbsp;agents</a> &nbsp;·&nbsp; musicodec</sub></p>
+<sub><a href="https://github.com/HenryZ838978/RepELab">RepELab</a> &nbsp;·&nbsp; <a href="https://doi.org/10.5281/zenodo.19627819">TRB</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/RepEngvLLM">RepEngvLLM</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/VoiceAgent-600ms">VoiceAgent-600ms</a> &nbsp;·&nbsp; musicodec</sub></p>
 
 <p>Ⅲ &nbsp;<b>protocol</b> &nbsp;—&nbsp; <em>between prior and runtime, a contract.</em><br>
 <sub><a href="https://github.com/HenryZ838978/deepseek-harness">deepseek-harness</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/pocketclaw">pocketclaw</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/pgattn">pgattn</a></sub></p>
@@ -186,7 +194,7 @@ papers:
       singular-value spectrum drifts <0.5% while singular-vector bases
       rotate 0.9-8 degrees — a graph isometry. "PR collapse" is a
       measurement artifact of angle.
-    doi: 10.5281/zenodo.19626829
+    doi: 10.5281/zenodo.19627819
     status: preprint
     peer_review: none
     raw_data_in_doi_record: true
@@ -197,7 +205,7 @@ papers:
         title     = {The Representation Bandwidth: A Conservation Analysis under RL Alignment},
         year      = {2026},
         publisher = {Zenodo},
-        doi       = {10.5281/zenodo.19626829},
+        doi       = {10.5281/zenodo.19627819},
         note      = {Preprint, not peer-reviewed}
       }
   - id: SFP_v2
@@ -207,8 +215,8 @@ papers:
       SpectralProbe, RotationAnalyzer, BandwidthDiagnostic,
       SpectralCallback, spectral_pr_loss. Single consumer GPU,
       reproducible to 1e-10 across hardware.
-    doi: 10.5281/zenodo.19587024
-    code: https://github.com/HenryZ838978/spectral-flow-probe
+    doi: 10.5281/zenodo.19627339
+    code: https://github.com/HenryZ838978/RepELab/tree/main/spectral-flow-probe
     license: MIT
     status: preprint + open-source toolkit
     peer_review: none
@@ -220,36 +228,39 @@ papers:
         title     = {Spectral Flow Probe v2: A Measurement Toolkit for Transformer Representation Bandwidth},
         year      = {2026},
         publisher = {Zenodo},
-        doi       = {10.5281/zenodo.19587024},
+        doi       = {10.5281/zenodo.19627339},
         license   = {MIT},
         note      = {Preprint with open-source reproducer}
       }
 
-repos_original:  # 2026-08-22 snapshot, per GitHub REST API
-  # shown on page:
-  - deepseek-harness          # ★45 · Ⅲ flagship
-  - Seedance2.0-Storyboard-Planner  # ★63 · Ⅳ
-  - pocketclaw                # ★34 · Ⅲ · signed APK v0.4.1
-  - Larksor-TC                # ★5  · Ⅲ
-  - flash-attn-blackwell      # Ⅰ · prebuilt sm_120 wheels
-  - M2SVid-Stereo-cuda-Wheel  # Ⅰ · monocular→stereo CUDA wheel
+repos_original:  # 2026-08-27 snapshot, per GitHub REST API
+  # active, shown on page:
+  - deepseek-harness          # ★46 · Ⅲ flagship · protocol-layer harness
+  - Seedance2.0-Storyboard-Planner  # ★64 · Ⅳ · capability-layer harness
+  - pocketclaw                # ★34 · Ⅲ · capability-layer · signed APK v0.4.1
+  - RepELab                   # Ⅱ · monorepo: RepSNI + spectral-flow-probe
+                              #   + rl-drift + SDE + Joi (subtree, history kept)
+  - RepEngvLLM                # Ⅱ · live steering engine (research → runtime)
+  - VoiceAgent-600ms          # Ⅱ · renamed CallCenter-VoiceAgent; absorbed
+                              #   Hybrid-VoiceAgent as omni/ (cascade + e2e)
   - AnythingKWS               # Ⅱ · wake words from text, VoxCPM
-  - CallCenter-VoiceAgent     # Ⅱ · full-duplex ASR+RAG+LLM+TTS
-  - Hybrid-VoiceAgent         # Ⅱ · Omni+TTS on vLLM
-  - spectral-flow-probe       # Ⅱ · SFP reproducer
-  - RepSNI                    # Ⅱ · manifold topology, 14 models
-  # public, parked, not on page — timing not right:
-  - SDE                       # ┐
-  - Joi                       # │ the J-space line: personality drift,
-  - rl-drift                  # │ darkspace expression, live steering.
-  - RepEngvLLM                # ┘ parked until it can be presented whole.
+  # archived 2026-08-27 (done-state or merged; signpost banners in READMEs):
+  - flash-attn-blackwell      # Ⅰ · prebuilt sm_120 wheels (done)
+  - M2SVid-Stereo-cuda-Wheel  # Ⅰ · CUDA wheel (done)
+  - Larksor-TC                # Ⅲ · worked as of Opus 4.7 / May 2026 (done)
+  - Hybrid-VoiceAgent         # Ⅱ · merged into VoiceAgent-600ms/omni
+  - spectral-flow-probe       # Ⅱ · merged into RepELab (citations still resolve)
+  - RepSNI                    # Ⅱ · merged into RepELab
+  - rl-drift                  # Ⅱ · merged into RepELab
+  - SDE                       # Ⅱ · merged into RepELab
+  - Joi                       # Ⅱ · merged into RepELab
 
 repos_fork_maintained:
-  - turboquant-pytorch        # PyTorch port of Google ICLR'26 KV quant (on page)
-  - nano-vllm-with-TurboQuant # 5x KV integration (folded into turboquant line)
-  - ScalEdgeClaw              # parked
-  - OpenMAIC-VoiceSupport     # parked
-  - Voiceagent-MacApp         # parked
+  - turboquant-pytorch        # PyTorch port of Google ICLR'26 KV quant (archived, done)
+  - nano-vllm-with-TurboQuant # 5x KV integration (archived, done)
+  - ScalEdgeClaw              # parked, pending deletion
+  - OpenMAIC-VoiceSupport     # parked, pending deletion
+  - Voiceagent-MacApp         # parked, pending deletion
 
 shipped_binaries:
   - name: pocketclaw
@@ -310,7 +321,7 @@ ecosystem_verification:
 known_weak_signals:
   github_followers: 8
   median_original_repo_stars: low single digits
-  star_outliers: { Seedance_planner: 63, deepseek_harness: 45, pocketclaw: 34 }
+  star_outliers: { Seedance_planner: 64, deepseek_harness: 46, pocketclaw: 34 }
   peer_review_on_papers: none
   partner_anchors_are_team_level: true
   most_repos_first_pushed_2026: true
@@ -322,9 +333,9 @@ known_weak_signals:
 fastest_audit_paths:
   - run: "pip install deepseek-harness-cli && dsh doctor --node"
     expect: "12 probes; findings match HISTORY.md rows for your rc version"
-  - doi: 10.5281/zenodo.19626829
+  - doi: 10.5281/zenodo.19627819
     expect: "n=644, Pearson p=7e-13, raw data in record"
-  - run: "git clone spectral-flow-probe && make probe MODEL=Qwen2-7B"
+  - run: "git clone RepELab && cd spectral-flow-probe && make probe MODEL=Qwen2-7B"
     expect: "match paper §4 Table 2 within 1e-10"
   - release: github.com/HenryZ838978/pocketclaw/releases/latest
     expect: "APK v0.4.1, installs on Android 11+"
