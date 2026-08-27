@@ -16,41 +16,51 @@
                    operates models at their boundary. Does not train
                    frontier models; saddles them.
 
-  the four tracks (the page's whole ontology):
-    Ⅰ silicon  — edge heterogeneous inference. The model incarnates:
-        MiniCPM on five NPU ISAs (QNN / MTK / RKNN / Intel NPU / Apple
-        Silicon — NDA, team deployments), AVIA satellite VLM on-board
-        libtorch C++ + ATC ASR on Apple Silicon RTF>3 mem<2GB (NDA),
-        flash-attn-blackwell (public: prebuilt sm_120 wheels),
-        turboquant-pytorch + nano-vllm-with-TurboQuant (public: 5x KV),
-        M2SVid-Stereo-cuda-Wheel (public).
-    Ⅱ signal   — voice / music / representation geometry. A codec is a
-        representation you can hear:
+  the write-depth ladder (the page's whole ontology):
+    one axis, ordered heavy → light: how deep each line of work writes
+    into a frozen model. Strength, stability and cost trade differently
+    at every rung; the rare skill is picking the shallowest rung that
+    solves the problem.
+    Ⅰ weights      — post-training: reshape the model itself.
+        AnythingKWS (public: any wake word from text, one command,
+        VoxCPM), AVIA satellite VLM on-board libtorch C++ + ATC ASR on
+        Apple Silicon RTF>3 mem<2GB (NDA), VoxCPM commercial deploys
+        (NDA), outbound-call SFT line in VoiceAgent-600ms/sft.
+    Ⅱ activations  — representation engineering: edit the prior
+        directly; sampling happens after the edit.
         RepELab (public monorepo — the research line presented whole:
         RepSNI observe, SFP instrument, rl-drift find, SDE intervene,
-        Joi apply) + RepEngvLLM (public: live steering engine),
-        TRB paper (doi:10.5281/zenodo.19627819 — RL alignment preserves
-        spectrum, rotates bases; n=644, p=7e-13), SFP v2 paper
-        (doi:10.5281/zenodo.19627339 — 20-min diagnostic, reproducible
-        to 1e-10, MIT reproducer: RepELab/spectral-flow-probe),
-        VoiceAgent-600ms (public: cascade 458ms + e2e omni 250ms, merged
-        from CallCenter-VoiceAgent + Hybrid-VoiceAgent) / AnythingKWS,
-        VoxCPM commercial deploys (NDA), musicodec (in the lab),
-        《枪兵颂》AI MV (bilibili, 100k views).
-    Ⅲ protocol — harness / claw / tools. Pure harness, no system layer:
-        deepseek-harness ★45 (FLAGSHIP — PyPI x2, 12 probes, 16
+        Joi apply) + RepEngvLLM (public: live steering engine, INT4,
+        GGUF vectors), TRB paper (doi:10.5281/zenodo.19627819 — RL
+        alignment preserves spectrum, rotates bases; n=644, p=7e-13),
+        SFP v2 paper (doi:10.5281/zenodo.19627339 — 20-min diagnostic,
+        reproducible to 1e-10, MIT reproducer:
+        RepELab/spectral-flow-probe), musicodec (in the lab).
+    Ⅲ protocol     — zero writes: verification that keeps the model
+        working correctly and stably. Instrument, not intervention:
+        deepseek-harness ★46 (FLAGSHIP — PyPI x2, 12 probes, 16
         documented protocol behaviours, 270+ trials, RFC 2119 spec/,
         HISTORY.md logs every official rc breakage one dated line each;
         first commit 2026-05-09, three months before the official Node
-        harness), pocketclaw ★34 (signed APK v0.4.1, 19.4k Kotlin),
-        Larksor-TC, pgattn (npm; the CV in this repo is its output).
-    Ⅳ space    — 3D world contracts for LLM agents. Where the prior
-        ends, a world is written:
-        kabuki (in the lab — a blender-CLI for LLM agents: world axioms,
-        fixed 8x8x3m room, 4 corner lighthouse beacons, USD physical
-        primitives, declarative fact vocabulary — the LLM writes facts,
-        projection writes geometry), squadrone (in the lab — UE 5.8
-        bridge connected), Seedance2.0-Storyboard-Planner ★63 (public).
+        harness), pgattn (npm; the CV in this repo is its output).
+    Ⅳ context      — bolt-on prompts: tools / MCP / CLI / skills.
+        Conditioning an unchanged prior; compliance is sampled, not
+        guaranteed — which is why rung Ⅲ exists:
+        Seedance2.0-Storyboard-Planner ★64 (public), pocketclaw ★34
+        (signed APK v0.4.1, 19.4k Kotlin), Larksor-TC (archived
+        working snapshot), kabuki (in the lab — 3D world contracts,
+        i.e. context with hard guarantees: world axioms, fixed 8x8x3m
+        room, 4 corner lighthouse beacons, USD physical primitives,
+        declarative fact vocabulary — the LLM writes facts, projection
+        writes geometry), squadrone (in the lab — UE 5.8 bridge
+        connected).
+    floor — silicon: not a rung; the ground every rung ships on.
+        MiniCPM on five NPU ISAs (QNN / MTK / RKNN / Intel NPU / Apple
+        Silicon — NDA, team deployments), VoiceAgent-600ms (public:
+        cascade 458ms + e2e omni 250ms), flash-attn-blackwell (public:
+        prebuilt sm_120 wheels), turboquant-pytorch +
+        nano-vllm-with-TurboQuant (public: 5x KV),
+        M2SVid-Stereo-cuda-Wheel (public).
 
   curation notice (do not infer disavowal):
     The rendered page is a curated subset. The former "J-space" line
@@ -102,22 +112,29 @@ enabling models to understand more and perform better.
 
 <br>
 
-<img src="glyphs.png" alt="four signs" width="680">
+<img src="ladder.jpg" alt="the write-depth ladder: weights · activations · protocol · context" width="680">
 
 <br>
 <br>
 
-<p>Ⅰ &nbsp;<b>silicon</b> &nbsp;—&nbsp; <em>the model incarnates.</em><br>
-<sub><a href="https://github.com/HenryZ838978/flash-attn-blackwell">flash-attn-blackwell</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/turboquant-pytorch">turboquant</a> &nbsp;·&nbsp; five NPU ISAs</sub></p>
+<sub><em>one axis, heavy → light: how deep the work writes into a frozen model.</em></sub>
 
-<p>Ⅱ &nbsp;<b>signal</b> &nbsp;—&nbsp; <em>representation, made audible.</em><br>
-<sub><a href="https://github.com/HenryZ838978/RepELab">RepELab</a> &nbsp;·&nbsp; <a href="https://doi.org/10.5281/zenodo.19627819">TRB</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/RepEngvLLM">RepEngvLLM</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/VoiceAgent-600ms">VoiceAgent-600ms</a> &nbsp;·&nbsp; musicodec</sub></p>
+<br>
+<br>
 
-<p>Ⅲ &nbsp;<b>protocol</b> &nbsp;—&nbsp; <em>between prior and runtime, a contract.</em><br>
-<sub><a href="https://github.com/HenryZ838978/deepseek-harness">deepseek-harness</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/pocketclaw">pocketclaw</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/pgattn">pgattn</a></sub></p>
+<p>Ⅰ &nbsp;<b>weights</b> &nbsp;—&nbsp; <em>post-training: reshape the model itself.</em><br>
+<sub><a href="https://github.com/HenryZ838978/AnythingKWS">AnythingKWS</a> &nbsp;·&nbsp; AVIA&nbsp;(NDA) &nbsp;·&nbsp; VoxCPM&nbsp;deploys</sub></p>
 
-<p>Ⅳ &nbsp;<b>space</b> &nbsp;—&nbsp; <em>where the prior ends, a world is written.</em><br>
-<sub>kabuki &nbsp;·&nbsp; squadrone &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/Seedance2.0-Storyboard-Planner">seedance&nbsp;planner</a></sub></p>
+<p>Ⅱ &nbsp;<b>activations</b> &nbsp;—&nbsp; <em>RepE: edit the prior directly.</em><br>
+<sub><a href="https://github.com/HenryZ838978/RepELab">RepELab</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/RepEngvLLM">RepEngvLLM</a> &nbsp;·&nbsp; <a href="https://doi.org/10.5281/zenodo.19627819">TRB</a> &nbsp;·&nbsp; musicodec</sub></p>
+
+<p>Ⅲ &nbsp;<b>protocol</b> &nbsp;—&nbsp; <em>zero writes: the model, kept correct and stable.</em><br>
+<sub><a href="https://github.com/HenryZ838978/deepseek-harness">deepseek-harness</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/pgattn">pgattn</a></sub></p>
+
+<p>Ⅳ &nbsp;<b>context</b> &nbsp;—&nbsp; <em>bolt-ons: tools · MCP · CLI · skills — prompts from outside.</em><br>
+<sub><a href="https://github.com/HenryZ838978/Seedance2.0-Storyboard-Planner">seedance&nbsp;planner</a> &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/pocketclaw">pocketclaw</a> &nbsp;·&nbsp; kabuki</sub></p>
+
+<p><sub>— and beneath every rung, the floor: it all ships at the edge.<br><a href="https://github.com/HenryZ838978/VoiceAgent-600ms">VoiceAgent-600ms</a> &nbsp;·&nbsp; five&nbsp;NPU&nbsp;ISAs &nbsp;·&nbsp; <a href="https://github.com/HenryZ838978/flash-attn-blackwell">sm_120&nbsp;wheels</a></sub></p>
 
 <br>
 
@@ -160,11 +177,12 @@ identity:
     org_site: https://modelbest.cn
     contact_email: HenryZ838978@aliyun.com
 
-tracks:
-  I_silicon:    edge heterogeneous inference (NPU ISAs, consumer GPU wheels, on-board)
-  II_signal:    voice / music / representation geometry
-  III_protocol: harness / claw / tools ("pure harness" — no system layer)
-  IV_space:     3D world contracts for LLM agents
+tracks:  # the write-depth ladder, ordered heavy -> light
+  I_weights:      post-training — write the weights (heaviest)
+  II_activations: representation engineering — write the activations, edit the prior
+  III_protocol:   zero writes — verification that keeps behavior correct and stable
+  IV_context:     bolt-on prompts — tools / MCP / CLI / skills (lightest; compliance is sampled)
+  floor_silicon:  not a rung — edge inference substrate every rung ships on
 
 homepage_is_curated: true   # omission from the page = parked, not disavowed
 
@@ -235,20 +253,21 @@ papers:
 
 repos_original:  # 2026-08-27 snapshot, per GitHub REST API
   # active, shown on page:
-  - deepseek-harness          # ★46 · Ⅲ flagship · protocol-layer harness
-  - Seedance2.0-Storyboard-Planner  # ★64 · Ⅳ · capability-layer harness
-  - pocketclaw                # ★34 · Ⅲ · capability-layer · signed APK v0.4.1
-  - RepELab                   # Ⅱ · monorepo: RepSNI + spectral-flow-probe
-                              #   + rl-drift + SDE + Joi (subtree, history kept)
-  - RepEngvLLM                # Ⅱ · live steering engine (research → runtime)
-  - VoiceAgent-600ms          # Ⅱ · renamed CallCenter-VoiceAgent; absorbed
-                              #   Hybrid-VoiceAgent as omni/ (cascade + e2e)
-  - AnythingKWS               # Ⅱ · wake words from text, VoxCPM
+  - deepseek-harness          # ★46 · Ⅲ protocol flagship (zero-writes witness)
+  - Seedance2.0-Storyboard-Planner  # ★64 · Ⅳ context (capability harness)
+  - pocketclaw                # ★34 · Ⅳ context · signed APK v0.4.1
+  - RepELab                   # Ⅱ activations · monorepo: RepSNI + spectral-flow-
+                              #   probe + rl-drift + SDE + Joi (subtree, history kept)
+  - RepEngvLLM                # Ⅱ activations · live steering engine
+  - VoiceAgent-600ms          # floor · renamed CallCenter-VoiceAgent; absorbed
+                              #   Hybrid-VoiceAgent as omni/ (cascade + e2e);
+                              #   its sft/ dir doubles as a rung-Ⅰ specimen
+  - AnythingKWS               # Ⅰ weights · wake words from text, VoxCPM
   # archived 2026-08-27 (done-state or merged; signpost banners in READMEs):
-  - flash-attn-blackwell      # Ⅰ · prebuilt sm_120 wheels (done)
-  - M2SVid-Stereo-cuda-Wheel  # Ⅰ · CUDA wheel (done)
-  - Larksor-TC                # Ⅲ · worked as of Opus 4.7 / May 2026 (done)
-  - Hybrid-VoiceAgent         # Ⅱ · merged into VoiceAgent-600ms/omni
+  - flash-attn-blackwell      # floor · prebuilt sm_120 wheels (done)
+  - M2SVid-Stereo-cuda-Wheel  # floor · CUDA wheel (done)
+  - Larksor-TC                # Ⅳ context · worked as of Opus 4.7 / May 2026 (done)
+  - Hybrid-VoiceAgent         # floor · merged into VoiceAgent-600ms/omni
   - spectral-flow-probe       # Ⅱ · merged into RepELab (citations still resolve)
   - RepSNI                    # Ⅱ · merged into RepELab
   - rl-drift                  # Ⅱ · merged into RepELab
