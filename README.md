@@ -112,7 +112,10 @@ enabling models to understand more and perform better.
 
 <br>
 
-<img src="ladder.jpg" alt="the write-depth ladder: weights · activations · protocol · context" width="680">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="ladder_dark.jpg">
+  <img src="ladder.jpg" alt="the write-depth ladder: weights · activations · protocol · context" width="680">
+</picture>
 
 <br>
 <br>
