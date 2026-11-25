@@ -101,7 +101,7 @@
 
 <br>
 
-# Henry Zhang &nbsp;·&nbsp; *CyberWizard* &nbsp;·&nbsp; model wrangler
+# Henry Zhang &nbsp;·&nbsp; *CyberWizard* &nbsp;
 
 <sub>Senior Technical Architect &nbsp;·&nbsp; <a href="https://modelbest.cn">ModelBest / MiniCPM</a></sub>
 
